@@ -45,9 +45,9 @@ describe('SinglePhotoComponent', () => {
 
   it('should set photoUrl, photoId, width, and height correctly', () => {
     fixture.detectChanges();
-    expect(component.photoId).toEqual(1);
-    expect(component.width).toEqual(5000);
-    expect(component.height).toEqual(3333);
+    expect(component.photoId).toEqual('1');
+    expect(component.width).toEqual('5000');
+    expect(component.height).toEqual('3333');
     expect(component.photoUrl).toEqual('test-url');
   });
 

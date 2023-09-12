@@ -7,7 +7,7 @@ import { PhotoLibraryService } from '../../services/photo-library.service';
   styleUrls: ['./favorite-list.component.scss']
 })
 export class FavoriteListComponent implements OnInit {
-  favorites: { photoUrl: string, photoId: number, width: number, height: number }[] = [];
+  favorites: { photoUrl: string, photoId: string, width: string, height: string }[] = [];
 
   constructor(private photoLibraryService: PhotoLibraryService) {}
 
@@ -17,17 +17,17 @@ export class FavoriteListComponent implements OnInit {
       if (matches && matches.length === 4) {
         return {
           photoUrl: url,
-          photoId: parseInt(matches[1], 10),
-          width: parseInt(matches[2], 10),
-          height: parseInt(matches[3], 10)
+          photoId: matches[1], // Keeping photoId as string
+          width: matches[2], // Keeping width as string
+          height: matches[3] // Keeping height as string
         };
       } else {
         return null;
       }
-    }).filter((favorite: null) => favorite !== null) as { photoUrl: string, photoId: number, width: number, height: number }[];
+    }).filter((favorite: null) => favorite !== null) as { photoUrl: string, photoId: string, width: string, height: string }[];
   }  
 
-  removeFromFavorites(photoId: number) {
+  removeFromFavorites(photoId: string) { // Changing the parameter type to string
     const removedPhoto = this.favorites.find(favorite => favorite.photoId === photoId);
     if (removedPhoto) {
       this.photoLibraryService.removeFromFavorites(removedPhoto.photoUrl);

@@ -79,9 +79,9 @@ describe('PhotoLibraryService', () => {
   });
 
   it('should generate photo URL by ID, width, and height', () => {
-    const photoId = 1;
-    const width = 200;
-    const height = 200;
+    const photoId = '1';
+    const width = '200';
+    const height = '200';
     const expectedUrl = 'https://picsum.photos/id/1/200/200';
 
     const result = service.getPhotoUrlById(photoId, width, height);

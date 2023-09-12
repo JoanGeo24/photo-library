@@ -49,7 +49,7 @@ export class PhotoLibraryService {
     return currentFavorites.includes(photoUrl);
   }
 
-  getPhotoUrlById(photoId: number, width: number, height: number): string {
+  getPhotoUrlById(photoId: string, width: string, height: string): string {
     return `https://picsum.photos/id/${photoId}/${width}/${height}`;
   } 
 }

@@ -9,9 +9,9 @@ import { PhotoLibraryService } from '../../services/photo-library.service';
 })
 export class SinglePhotoComponent implements OnInit {
   photoUrl: string | undefined;
-  photoId: number = 0;
-  width: number = 0;
-  height: number = 0;
+  photoId: string = '';
+  width: string = '';
+  height: string = '';
 
   constructor(
     private route: ActivatedRoute,

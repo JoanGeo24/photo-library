@@ -1,0 +1,13 @@
+<div class="photo-list">
+    <div class="photo-row" *ngFor="let row of photos">
+      <div class="" *ngFor="let photoUrl of row">
+        <div class="photo-container">
+          <img [src]="photoUrl" width="200" height="300" (click)="onPhotoClick(photoUrl)" alt="Random Photo">
+          <mat-icon class="favorite-icon" *ngIf="photoLibraryService.isFavorite(photoUrl)">favorite</mat-icon>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  
+<div class="loader" [class.show]="loading">Loading...</div>

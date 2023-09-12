@@ -1,0 +1,12 @@
+<div class="favorite-list--container" *ngIf="favorites.length">
+  <div class="favorite-list--sub-container" *ngFor="let favorite of favorites">
+    <a [routerLink]="['/photos', favorite.photoId]" [queryParams]="{ width: favorite.width, height: favorite.height }">
+      <img [src]="favorite.photoUrl" width="200" height="300" alt="Favorite Photo">
+    </a> 
+    <button class="btn" mat-raised-button (click)="removeFromFavorites(favorite.photoId)">Remove from Favorites</button>
+  </div>
+</div>
+
+<div class="favorite-list" *ngIf="!favorites.length">
+  <p class="favorite-list--empty">There are no favorite images</p>
+</div>
